@@ -1,32 +1,89 @@
-# Declaração
+"""
+Strings são uma sequência de caracteres: podem ser letras, símbolos, números e espaços.
+Podemos representá-las de duas formas:
+- Com aspas simples: 'texto'
+- Ou com aspas duplas: "texto"
+"""
 
-nome_completo = "Lucas Ulerich" # É uma string
+nome = 'Lucas'
+frase = "Aprender Python é divertido"
 
-nome_completo_aspas = """Lucas 
-Ulerich""" # para quebra de linha
+"""
+Também podemos usar aspas triplas (simples ou duplas) para strings de múltiplas linhas:
+"""
 
-nome_completo_quebra = "Lucas \
-Ulerich" ## Usamos a barra para fazer a quebra de linha
+mensagem1 = """Olha, eu 
+posso quebrar 
+em várias linhas"""
+
+mensagem2 = '''Também com
+aspas 
+simples'''
+
+"""
+Strings são imutáveis: isso significa que não podemos alterá-las após criá-las.
+"""
+
+nome = "Lucas"
+# nome[0] = "R"  # ❌ Isso gera erro: strings são imutáveis
+
+"""
+Strings são como listas (ou matrizes) de caracteres: podemos acessar cada caractere usando índices.
+"""
+
+a = "olá mundo!"
+print(a[1])  # Resultado: "l" (lembre-se: o índice começa em 0)
+
+"""
+Podemos verificar o comprimento de uma string com a função len():
+"""
+
+print(len(a))  # Resultado: 10
+
+# Concatenação e multiplicação de strings
+
+"""
+Concatenação significa juntar strings usando o operador +.
+OBS: O operador + não soma valores nesse caso, apenas junta.
+"""
+
+nome1 = "Lucas"
+sobrenome1 = "Ulerich"
+
+print(nome1 + " " + sobrenome1)  # Resultado: Lucas Ulerich
+
+"""
+Podemos multiplicar uma string com o operador * (como na matemática).
+"""
+
+nome2 = "Lucas"
+print(nome2 * 4)  # Resultado: LucasLucasLucasLucas
+
+# Formatação de strings
 
 nome = "Lucas"
 sobrenome = "Ulerich"
+nome_completo = "Lucas Ulerich"
 
-numero = 123
+print("Nome completo: (1ª forma)", nome_completo)
+print("Nome completo: (2ª forma) " + nome_completo)
+print("Nome completo: (3ª forma) " + nome + " " + sobrenome)
+print("Nome completo: (4ª forma) %s" % nome_completo)
+print("Nome completo: (5ª forma) %s %s" % (nome, sobrenome))
+print(f"Nome completo: (6ª forma) {nome_completo}")  # f-string (moderna e recomendada)
 
-#FORMATAÇÃO
-print("Nome Completo:", nome_completo) # 1a forma de formatar (A virgula já coloca um espaço na frente)
+# Strns tem varios métodos embutidos
 
-print("Nome Completo:" + nome_completo) # 2a forma de formatar (Só funciona com strings)
+nome = "lucas"
 
-print("Nome Completo:" + "Lucas" + "Ulerich") # 3a forma de formatar (Só funciona com strings, pois se usar o sinal de + em int ou float o python tentará somar)
+print(nome.upper())     # LUCAS
+print(nome.capitalize())# Lucas
+print(nome.isalpha())   # True
+print(nome.replace("a", "4"))  # luc4s
+print(nome.startswith("lu"))  # True
+print(nome.endswith("s"))     # True
+print(nome.find("c"))         # 2 (posição)
 
-print("Nome Completo:"+ "Lucas", "Ulerich") # 4a forma de formatar (Só funciona com strings)
-
-print("Nome Completo:", nome_completo_aspas) # 5a forma de formatar (Só funciona com strings)
-
-print("Nome Completo:", nome_completo_quebra) # 6a forma de formatar (Só funciona com strings)
-
-print("Nome Completo: %s %s" %nome_completo_quebra) # 7a forma de formatar (Só funciona com strings)
-print("Nome Completo: %s %s" %(nome_completo_quebra, numero)) # 7a forma de formatar (Para usar mais de uma variavél temos que colocar mais de um %s e colcoar as variaveis dentro de () e separadas por virgula.)
-
-print(f" Nome completo: {nome_completo_aspas}, {nome_completo_quebra}") # 8a forma de formatar (Só funciona com strings)
+txt = "Hello world"
+txt = txt.upper()
+print(txt)
